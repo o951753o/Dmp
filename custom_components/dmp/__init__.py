@@ -211,7 +211,7 @@ class DMPListener():
 
     async def listen(self):
         """ Start TCP server listening on configured port """
-        server = await asyncio.start_server(self.handle_connection, "0.0.0.0", self._port)
+        server = await asyncio.start_server(self.handle_connection, "10.0.0.9", self._port)
         self._server = server
         addr = server.sockets[0].getsockname()
         _LOGGER.info(f"Listening on {addr}:{self._port}")
